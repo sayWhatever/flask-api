@@ -1,14 +1,22 @@
 # improts
 from flask import Flask, request
-import os
+from flask_socketio import SocketIO, send, emit
 import openai
+
 
 openai.api_key = "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"
 
 # flask app
 app = Flask(__name__)
+socketio = SocketIO(app)
 
-# base API
+
+@socketio.on("connect")
+def handle_json():
+    emit("after connect", {"data": "pong"})
+
+
+"""# base API
 @app.route("/", methods=["GET"])
 def api():
     if request.method == "GET":
@@ -42,10 +50,10 @@ def postMsg():
 @app.route("/getmsg", methods=["GET"])
 def getMsg():
     if request.method == "GET":
-        return {"method": "GET"}
+        return {"method": "GET"}"""
 
 
 # main
 if __name__ == "__main__":
-    app.debug = True
-    app.run()
+    app.run(debug=True)
+    socketio.run(app)
