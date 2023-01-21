@@ -2,13 +2,15 @@
 from flask import Flask, request
 from flask_socketio import SocketIO, send, emit
 import openai
+from flask_cors import CORS
 
 
 openai.api_key = "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"
 
 # flask app
 app = Flask(__name__)
-socketio = SocketIO(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 @socketio.on("connect")
@@ -55,5 +57,4 @@ def getMsg():
 
 # main
 if __name__ == "__main__":
-    app.run(debug=True)
-    socketio.run(app)
+    socketio.run(app, debug=True)
