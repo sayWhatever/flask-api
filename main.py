@@ -27,7 +27,7 @@ def storeMsg(sentMsg):
 def sumMsg():
     with open("messages.txt", "r") as file_object:
         msg = file_object.read()
-    msg = msg + "\n\nsummarize and include important details"
+    msg = msg + "\n\nEND. summarize and include important details"
     print(msg)
     # token_num = len(msg) // 4
     # max_token = token_num // 2
