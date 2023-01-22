@@ -3,6 +3,8 @@ from flask import Flask, request
 from flask_socketio import SocketIO, send, emit
 from flask_cors import CORS
 import openai
+import time
+
 
 # openai api key
 openai.api_key = "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"
@@ -14,10 +16,11 @@ socketio = SocketIO(app, engineio_logger=True, logger=True, cors_allowed_origins
 
 
 # channel for receiving messages
-@socketio.on("toStoreMsg")
+@socketio.on("msgToServer")
 def storeMsg(sentMsg):
     with open("messages.txt", "a") as file_object:
         file_object.write(sentMsg + "\n")
+    emit("msgToClients", sentMsg)
 
 
 # channel for sending summarized messages
@@ -42,4 +45,20 @@ def sumMsg():
 
 # main
 if __name__ == "__main__":
-    socketio.run(app, debug=True)
+    # socketio.run(app, debug=True)
+    response = input("Dummy text:\n")
+    response = response + "\n\nTl;dr"
+    token_num = len(response) // 4
+    max_token = token_num // 2
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=response,
+        temperature=0.7,
+        max_tokens=max_token,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=1,
+    )
+    end = time.time()
+    running_time = end - start
+    print(running_time)
