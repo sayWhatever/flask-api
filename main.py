@@ -10,12 +10,13 @@ openai.api_key = "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"
 # flask app
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(app, engineio_logger=True, logger=True, cors_allowed_origins="*")
 
 
-@socketio.on("connect")
-def handle():
-    emit("after connect", {"data": "pong"})
+@socketio.on("ping")
+def handle_json():
+    print("after connect")
+    emit("response", {"data": "connect"})
 
 
 """# base API
