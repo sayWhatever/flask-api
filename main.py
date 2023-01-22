@@ -37,7 +37,7 @@ def sumMsg():
         frequency_penalty=0,
         presence_penalty=1,
     )
-    emit("sumMsg", {"response": response})
+    emit("sumMsg", response.choices[0].text)
 
 
 # main
