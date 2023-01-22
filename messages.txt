@@ -1,1 +1,66 @@
+<<<<<<< HEAD
 adrian  : hey there\n
+=======
+john : Hi Mike
+
+
+mike : Hey John
+
+
+john : Did we have any homework
+
+
+mike : Yes, we had math and english homework
+
+
+john : What pages were for math
+
+
+mike : I think pages 13 - 22
+
+
+mike : Can you give me your answers?
+
+
+john : No Mike, that would be cheating
+
+
+hello : Hey is anyone here?
+
+
+hello : I have a question about the field trip
+
+
+hello : Hello???
+
+
+Ryan : When are we going to your place tomorrow?
+
+
+Jonathan : Come by around 4pm. You can buzz me at 1301
+
+
+Ryan : Sounds good, do you need me to bring anything?
+
+
+Jonathan : Bring some chips and maybe something to drink
+
+
+Ryan : Aight dope, see you tmr
+
+
+
+Adrian : h
+Adrian : h
+Adrian : h
+oscar : ts
+
+Jon : whats your name
+
+oscar : Oscar
+
+Jon : what school do you go to?
+
+oscar : UBC
+
+>>>>>>> 0e102140cd98bfe79fd5fbff9af18458c85bd748
