@@ -1,8 +1,8 @@
-# improts
+# imports
 from flask import Flask, request
 from flask_socketio import SocketIO, send, emit
-import openai
 from flask_cors import CORS
+import openai
 
 
 openai.api_key = "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"
@@ -14,7 +14,7 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 @socketio.on("connect")
-def handle_json():
+def handle():
     emit("after connect", {"data": "pong"})
 
 
