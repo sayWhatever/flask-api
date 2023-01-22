@@ -1,5 +1,7 @@
 # **Flask WebSocket Server**
 
+The README.md file provides information on a Flask server that uses WebSockets to handle client-server communication. It also includes a basic integration with the OpenAI API to generate text completions. The document also lists the technologies used in building the project, including Flask, Flask-SocketIO, Flask-CORS and OpenAI.
+
 This is a simple Flask server that uses WebSockets to handle client-server communication. It also includes a basic integration with the OpenAI API to generate text completions.
 
 ## | Getting Started
@@ -32,6 +34,8 @@ These instructions will help you get set up and run the server on your local mac
    ```bash
    python main.py
    ```
+
+&nbsp;
 
 ### | Usage
 
