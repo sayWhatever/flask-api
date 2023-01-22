@@ -19,6 +19,11 @@ def handle_json():
     emit("response", {"data": "connect"})
 
 
+@socketio.on("summarize")
+def summarize(json):
+    emit("response", {"data": "summarize"})
+
+
 """# base API
 @app.route("/", methods=["GET"])
 def api():
