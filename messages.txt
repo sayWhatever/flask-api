@@ -1,7 +1,49 @@
-hello : test
-jas : test1
-test3 : what time is the meeting tomorrow?
-hello : where is the toilet
-test3 : its next door
-wally : Hey Jason
-jason : Hey Wally
+john : Hi Mike
+
+
+mike : Hey John
+
+
+john : Did we have any homework
+
+
+mike : Yes, we had math and english homework
+
+
+john : What pages were for math
+
+
+mike : I think pages 13 - 22
+
+
+mike : Can you give me your answers?
+
+
+john : No Mike, that would be cheating
+
+
+hello : Hey is anyone here?
+
+
+hello : I have a question about the field trip
+
+
+hello : Hello???
+
+
+Ryan : When are we going to your place tomorrow?
+
+
+Jonathan : Come by around 4pm. You can buzz me at 1301
+
+
+Ryan : Sounds good, do you need me to bring anything?
+
+
+Jonathan : Bring some chips and maybe something to drink
+
+
+Ryan : Aight dope, see you tmr
+
+
+

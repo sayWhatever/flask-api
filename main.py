@@ -11,7 +11,7 @@ openai.api_key = "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"
 # flask app
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
-socketio = SocketIO(app, engineio_logger=True, logger=True, cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 # channel for receiving messages
@@ -27,19 +27,21 @@ def storeMsg(sentMsg):
 def sumMsg():
     with open("messages.txt", "r") as file_object:
         msg = file_object.read()
-    msg = msg + "\n\nTl;dr"
-    token_num = len(msg) // 4
-    max_token = token_num // 2
+    msg = msg + "\n\nsummarize and include important details"
+    print(msg)
+    # token_num = len(msg) // 4
+    # max_token = token_num // 2
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=msg,
-        temperature=0.7,
-        max_tokens=max_token,
+        temperature=0.6,
+        max_tokens=50,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=1,
     )
-    emit("sumMsg", response.choices[0].text)
+    print(response.choices[0].text)
+    emit("sumMsg", response.choices[0].text, broadcast=True)
 
 
 # main
