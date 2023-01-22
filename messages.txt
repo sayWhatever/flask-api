@@ -64,3 +64,4 @@ Jon : what school do you go to?
 oscar : UBC
 
 >>>>>>> 0e102140cd98bfe79fd5fbff9af18458c85bd748
+adrian: hey\nadrian: hi\nadrian: hey\nadrian: hi\n

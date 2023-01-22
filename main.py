@@ -40,12 +40,10 @@ def storeMsg(sentMsg):
         if "deleteMsg" in sentMsg["clientMessage"]:
             file_object.truncate(0)
         else:
-            file_object.write(
-                sentMsg["userName"] + ": " + sentMsg["clientMessage"] + "\\n"
-            )
+            file_object.write(sentMsg + "\\n")
             emit(
                 "msgToClients",
-                sentMsg["userName"] + ": " + sentMsg["clientMessage"],
+                sentMsg,
                 broadcast=True,
             )
 
