@@ -2,8 +2,6 @@
 
 This is a simple Flask server that uses WebSockets to handle client-server communication. It also includes a basic integration with the OpenAI API to generate text completions.
 
-&nbsp;
-
 ## | Getting Started
 
 These instructions will help you get set up and run the server on your local machine.
