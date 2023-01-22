@@ -3,7 +3,6 @@ from flask import Flask, request
 from flask_socketio import SocketIO, send, emit
 from flask_cors import CORS
 import openai
-import time
 
 
 # openai api key
@@ -45,20 +44,4 @@ def sumMsg():
 
 # main
 if __name__ == "__main__":
-    # socketio.run(app, debug=True)
-    response = input("Dummy text:\n")
-    response = response + "\n\nTl;dr"
-    token_num = len(response) // 4
-    max_token = token_num // 2
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=response,
-        temperature=0.7,
-        max_tokens=max_token,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=1,
-    )
-    end = time.time()
-    running_time = end - start
-    print(running_time)
+    socketio.run(app, debug=True)
