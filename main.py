@@ -19,7 +19,7 @@ socketio = SocketIO(app, engineio_logger=True, logger=True, cors_allowed_origins
 def storeMsg(sentMsg):
     with open("messages.txt", "a") as file_object:
         file_object.write(sentMsg + "\n")
-    emit("msgToClients", sentMsg)
+    emit("msgToClients", sentMsg, broadcast=True)
 
 
 # channel for sending summarized messages
