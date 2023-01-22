@@ -14,14 +14,14 @@ socketio = SocketIO(app, engineio_logger=True, logger=True, cors_allowed_origins
 
 
 # channel for receiving messages
-@socketio.on("recMsg")
+@socketio.on("toStoreMsg")
 def storeMsg(sentMsg):
     with open("messages.txt", "a") as file_object:
         file_object.write(sentMsg + "\n")
 
 
 # channel for sending summarized messages
-@socketio.on("sumMsg")
+@socketio.on("toSumMsg")
 def sumMsg():
     with open("messages.txt", "r") as file_object:
         msg = file_object.read()
